@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Vishv Kraanti Samaaj Foundation</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    html, body { font-family: "Poppins", sans-serif; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- NAVBAR (Top bar removed) -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="index.html">
+        <img src="image/logo.png" class="h-20" alt="Logo">
+      </a>
+
+      <div class="hidden md:flex space-x-8 font-semibold text-blue-900">
+        <a href="index.html" class="hover:text-orange-500">Home</a>
+        <a href="about.html" class="hover:text-orange-500">About</a>
+        <a href="program.html" class="hover:text-orange-500">Programs</a>
+        <a href="impact.html" class="hover:text-orange-500">Impact</a>
+        <a href="gallery.html" class="hover:text-orange-500">Gallery</a>
+        <a href="contact.html" class="text-orange-600 border-b-2 border-orange-500">Contact</a>
+      </div>
+
+      <a href="donate.html"
+        class="hidden md:inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600">
+        Donate Now
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="flex flex-col p-6 space-y-4 font-semibold text-blue-900">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="program.html">Programs</a>
+        <a href="impact.html">Impact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="text-orange-600">Contact</a>
+        <a href="donate.html" class="bg-orange-500 text-white px-5 py-2 rounded-full text-center">Donate</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative bg-blue-900 text-white py-16 sm:py-20 px-4 sm:px-6 text-center">
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h1>
+      <p class="text-blue-100 max-w-2xl mx-auto">
+        We'd love to hear from you. Reach out to support, volunteer, or partner with us.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- CONTACT INFO -->
+      <div>
+        <h2 class="text-3xl font-extrabold text-blue-900 mb-6">Get In Touch</h2>
+
+        <div class="space-y-6">
+
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-location-dot text-orange-500 text-xl"></i>
+            <div>
+              <h4 class="font-extrabold text-blue-900">Address</h4>
+              <p class="text-gray-600">Andhra Pradesh & Bengaluru, India</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-envelope text-orange-500 text-xl"></i>
+            <div>
+              <h4 class="font-extrabold text-blue-900">Email</h4>
+              <p class="text-gray-600">info@vksfoundation.org</p>
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-4">
+            <i class="fas fa-phone text-orange-500 text-xl"></i>
+            <div>
+              <h4 class="font-extrabold text-blue-900">Phone</h4>
+              <p class="text-gray-600">+91 98765 43210</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="bg-gray-50 p-8 rounded-2xl shadow-md border">
+        <h3 class="text-2xl font-extrabold text-blue-900 mb-6">Send Us a Message</h3>
+
+        <form class="space-y-5">
+          <input type="text" placeholder="Your Name"
+            class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-orange-400">
+
+          <input type="email" placeholder="Your Email"
+            class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-orange-400">
+
+          <input type="text" placeholder="Subject"
+            class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-orange-400">
+
+          <textarea rows="5" placeholder="Your Message"
+            class="w-full p-4 border rounded-xl outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+
+          <button type="submit"
+            class="w-full bg-orange-500 text-white py-4 rounded-xl font-extrabold hover:bg-orange-600 transition">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="bg-gray-50 py-16 sm:py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900">Our Location</h2>
+        <p class="text-gray-600 mt-3">We currently work across Andhra Pradesh & Bengaluru.</p>
+        <div class="h-1 w-24 bg-orange-500 mx-auto mt-6"></div>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden shadow-lg border">
+        <iframe
+          src="https://maps.google.com/maps?q=Andhra%20Pradesh&t=&z=7&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="380" style="border:0;" allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-orange-500 py-14 text-center text-white">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Be the Change Today</h2>
+      <p class="text-lg mb-8 opacity-90">Support rural students and help us build a brighter future.</p>
+      <a href="donate.html"
+        class="bg-blue-900 px-8 py-4 rounded-xl font-extrabold hover:bg-blue-950 transition shadow-lg">
+        Donate Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER (links fixed to match your other pages) -->
+  <footer class="bg-blue-950 text-gray-300">
+    <div class="container mx-auto px-4 sm:px-6 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <div>
+          <img src="image/logo.png" alt="VKS Foundation" class="h-16 mb-4">
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Vishv Kraanti Samaaj Foundation empowers rural students through education, mentorship, skill programs and
+            financial literacy—creating financially independent youth.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Quick Links</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="hover:text-orange-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-orange-400 transition">About</a></li>
+            <li><a href="program.html" class="hover:text-orange-400 transition">Programs</a></li>
+            <li><a href="impact.html" class="hover:text-orange-400 transition">Impact</a></li>
+            <li><a href="gallery.html" class="hover:text-orange-400 transition">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-orange-400 transition">Contact</a></li>
+            <li><a href="donate.html" class="hover:text-orange-400 transition">Donate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Support</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="donate.html" class="hover:text-orange-400 transition">Donate</a></li>
+            <li><a href="volunteer.html" class="hover:text-orange-400 transition">Volunteer</a></li>
+            <li><a href="contact.html" class="hover:text-orange-400 transition">Partner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Contact</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><i class="fas fa-location-dot text-orange-400 mr-2"></i> Andhra Pradesh & Bengaluru</li>
+            <li><i class="fas fa-envelope text-orange-400 mr-2"></i> info@vksfoundation.org</li>
+            <li><i class="fas fa-phone-alt text-orange-400 mr-2"></i> +91 98765 43210</li>
+          </ul>
+
+          <a href="donate.html"
+            class="inline-flex mt-6 bg-orange-500 text-white px-6 py-3 rounded-xl font-extrabold hover:bg-orange-600 transition">
+            Donate Now
+          </a>
+        </div>
+
+      </div>
+
+      <div class="border-t border-blue-900 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-gray-400">© 2026 Vishv Kraanti Samaaj Foundation. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-gray-400">
+          <a href="#" class="hover:text-orange-400 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-orange-400 transition">Terms</a>
+          <a href="#" class="hover:text-orange-400 transition">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Auto close menu when clicking a link (mobile)
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
+
+</body>
+</html>

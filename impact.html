@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Impact | Vishv Kraanti Samaaj Foundation</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- NAVBAR (Top bar removed) -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="index.html">
+        <img src="image/logo.png" class="h-20" alt="Logo">
+      </a>
+
+      <div class="hidden md:flex space-x-8 font-semibold text-blue-900">
+        <a href="index.html" class="hover:text-orange-500">Home</a>
+        <a href="about.html" class="hover:text-orange-500">About</a>
+        <a href="program.html" class="hover:text-orange-500">Programs</a>
+        <a href="impact.html" class="text-orange-600 border-b-2 border-orange-500">Impact</a>
+        <a href="gallery.html" class="hover:text-orange-500">Gallery</a>
+        <a href="contact.html" class="hover:text-orange-500">Contact</a>
+      </div>
+
+      <a href="donate.html"
+        class="hidden md:inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600">
+        Donate Now
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="flex flex-col p-6 space-y-4 font-semibold text-blue-900">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="program.html">Programs</a>
+        <a href="impact.html" class="text-orange-600">Impact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html" class="bg-orange-500 text-white px-5 py-2 rounded-full text-center">Donate</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative bg-blue-900 text-white py-16 sm:py-20 px-4 sm:px-6 text-center">
+    <div
+      class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80')] bg-cover bg-center">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Our Impact</h1>
+      <p class="text-blue-100 max-w-2xl mx-auto">
+        Every number represents a student supported, a volunteer effort, and a community strengthened.
+      </p>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900">Impact Highlights</h2>
+        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
+          We measure our success by the lives transformed through education, skills and opportunity.
+        </p>
+        <div class="h-1 w-24 bg-orange-500 mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Lives Touched -->
+        <div class="bg-gray-50 border rounded-3xl p-10 shadow-sm hover:shadow-xl transition text-center">
+          <div class="text-orange-500 text-5xl mb-4">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3 class="text-5xl font-extrabold text-blue-900">100</h3>
+          <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-3">Lives Touched</p>
+          <p class="text-gray-700 mt-4">
+            Students supported through scholarships, mentoring and educational guidance.
+          </p>
+        </div>
+
+        <!-- Volunteers -->
+        <div class="bg-gray-50 border rounded-3xl p-10 shadow-sm hover:shadow-xl transition text-center">
+          <div class="text-orange-500 text-5xl mb-4">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3 class="text-5xl font-extrabold text-blue-900">25</h3>
+          <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-3">Volunteers Engaged</p>
+          <p class="text-gray-700 mt-4">
+            Passionate individuals contributing time, mentorship and skill training.
+          </p>
+        </div>
+
+        <!-- Projects -->
+        <div class="bg-gray-50 border rounded-3xl p-10 shadow-sm hover:shadow-xl transition text-center">
+          <div class="text-orange-500 text-5xl mb-4">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 class="text-5xl font-extrabold text-blue-900">10</h3>
+          <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-3">Projects Completed</p>
+          <p class="text-gray-700 mt-4">
+            Successful initiatives executed to uplift rural students and communities.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Story Section -->
+  <section class="py-16 sm:py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 leading-tight">
+            Impact is not just numbers — it’s confidence, opportunity, and transformation.
+          </h2>
+          <p class="text-gray-700 mt-6 leading-relaxed">
+            Our students come from rural backgrounds where resources are limited, but aspirations are big. With the right
+            support, guidance, and exposure, they begin to dream bigger and take steps toward financial independence.
+          </p>
+
+          <div class="mt-6 space-y-3 text-gray-700">
+            <p>✅ Better access to education & mentorship</p>
+            <p>✅ Skill-building for career readiness</p>
+            <p>✅ Financial awareness and stability mindset</p>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="donate.html"
+              class="inline-flex justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">
+              Donate Now
+            </a>
+            <a href="contact.html"
+              class="inline-flex justify-center border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-xl font-extrabold hover:bg-blue-900 hover:text-white transition">
+              Volunteer / Partner
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-5 -left-5 w-24 h-24 bg-orange-500 rounded-full opacity-20 animate-pulse"></div>
+          <img class="rounded-3xl shadow-2xl w-full object-cover"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="Impact">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-orange-500 py-14 text-center text-white">
+    <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Help Us Reach More Students</h2>
+      <p class="text-lg mb-8 opacity-90">
+        Every contribution helps rural students access education, skills and financial independence.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="donate.html" class="bg-blue-900 px-8 py-4 rounded-xl font-extrabold hover:bg-blue-950 transition shadow-lg">
+          Donate Now
+        </a>
+        <a href="contact.html"
+          class="border-2 border-white px-8 py-4 rounded-xl font-extrabold hover:bg-white hover:text-blue-900 transition shadow-lg">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (links fixed) -->
+  <footer class="bg-blue-950 text-gray-300">
+    <div class="container mx-auto px-4 sm:px-6 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <div>
+          <img src="image/logo.png" alt="VKS Foundation" class="h-16 mb-4">
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Vishv Kraanti Samaaj Foundation empowers rural students through education, mentorship, skill programs and
+            financial literacy—creating financially independent youth.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Quick Links</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="hover:text-orange-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-orange-400 transition">About</a></li>
+            <li><a href="program.html" class="hover:text-orange-400 transition">Programs</a></li>
+            <li><a href="impact.html" class="hover:text-orange-400 transition">Impact</a></li>
+            <li><a href="gallery.html" class="hover:text-orange-400 transition">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-orange-400 transition">Contact</a></li>
+            <li><a href="donate.html" class="hover:text-orange-400 transition">Donate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Programs</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="program.html" class="hover:text-orange-400 transition">Rural-to-Urban Education Bridge</a></li>
+            <li><a href="program.html" class="hover:text-orange-400 transition">Skill Development Workshops</a></li>
+            <li><a href="program.html" class="hover:text-orange-400 transition">Financial Literacy Program</a></li>
+            <li><a href="donate.html" class="hover:text-orange-400 transition">Support a Student</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-white font-extrabold text-lg mb-4">Contact</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><i class="fas fa-location-dot text-orange-400 mr-2"></i> Andhra Pradesh & Bengaluru</li>
+            <li><i class="fas fa-envelope text-orange-400 mr-2"></i> info@vksfoundation.org</li>
+            <li><i class="fas fa-phone-alt text-orange-400 mr-2"></i> +91 98765 43210</li>
+          </ul>
+
+          <a href="donate.html"
+            class="inline-flex mt-6 bg-orange-500 text-white px-6 py-3 rounded-xl font-extrabold hover:bg-orange-600 transition">
+            Donate Now
+          </a>
+        </div>
+
+      </div>
+
+      <div class="border-t border-blue-900 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-sm text-gray-400">© 2026 Vishv Kraanti Samaaj Foundation. All rights reserved.</p>
+        <div class="flex gap-6 text-sm text-gray-400">
+          <a href="#" class="hover:text-orange-400 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-orange-400 transition">Terms</a>
+          <a href="#" class="hover:text-orange-400 transition">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
+
+</body>
+</html>

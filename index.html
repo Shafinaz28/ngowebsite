@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vishv Kraanti Samaaj Foundation | Rural-to-Urban Education Support</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- NAVBAR (Top bar removed as requested) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="image/logo.png" class="h-16 sm:h-20" alt="VKS Foundation Logo">
+            </a>
+
+            <div class="hidden md:flex space-x-8 font-semibold text-blue-900">
+                <a href="index.html" class="text-orange-600 border-b-2 border-orange-500">Home</a>
+                <a href="about.html" class="hover:text-orange-500">About</a>
+                <a href="program.html" class="hover:text-orange-500">Programs</a>
+                <a href="impact.html" class="hover:text-orange-500">Impact</a>
+                <a href="gallery.html" class="hover:text-orange-500">Gallery</a>
+                <a href="contact.html" class="hover:text-orange-500">Contact</a>
+            </div>
+
+            <a href="donate.html"
+                class="hidden md:inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600">
+                Donate Now
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="flex flex-col p-6 space-y-4 font-semibold text-blue-900">
+                <a href="index.html" class="text-orange-600">Home</a>
+                <a href="about.html">About</a>
+                <a href="program.html">Programs</a>
+                <a href="impact.html">Impact</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="donate.html" class="bg-orange-500 text-white px-5 py-2 rounded-full text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+  <!-- HERO SECTION -->
+<section class="relative bg-blue-900 text-white overflow-hidden min-h-screen flex items-center justify-center">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+
+    <div class="relative container mx-auto px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto text-center">
+
+            <!-- Bigger & Perfectly Centered Hero Image -->
+            <img src="image/hero.png"
+                 alt="Hero Image"
+                 class="mx-auto w-72 sm:w-96 md:w-[550px] lg:w-[650px] xl:w-[750px] object-contain mb-12">
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+
+                <a href="donate.html"
+                   class="w-64 h-14 flex items-center justify-center 
+                          bg-orange-500 text-white 
+                          text-lg font-bold 
+                          rounded-xl shadow-lg 
+                          hover:bg-orange-600 
+                          transition duration-300">
+                    Sponsor a Student
+                </a>
+
+                <a href="#programs"
+                   class="w-64 h-14 flex items-center justify-center 
+                          bg-white text-blue-900 
+                          text-lg font-bold 
+                          rounded-xl shadow-lg 
+                          hover:bg-gray-100 
+                          transition duration-300">
+                    Explore Programs
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- QUICK IMPACT STRIP (matches your stats) -->
+    <section class="bg-white border-b">
+        <div class="container mx-auto px-4 sm:px-6 py-10">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div class="p-6 rounded-2xl hover:bg-blue-50 transition border">
+                    <h3 class="text-4xl font-extrabold text-blue-900">100+</h3>
+                    <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-2">Students Supported</p>
+                </div>
+                <div class="p-6 rounded-2xl hover:bg-orange-50 transition border">
+                    <h3 class="text-4xl font-extrabold text-orange-500">25+</h3>
+                    <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-2">Volunteers Engaged</p>
+                </div>
+                <div class="p-6 rounded-2xl hover:bg-blue-50 transition border">
+                    <h3 class="text-4xl font-extrabold text-blue-900">10+</h3>
+                    <p class="text-gray-600 uppercase tracking-widest text-xs font-bold mt-2">Initiatives Completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SNAPSHOT (uses your about text in a clean way) -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2
+                    class="text-3xl sm:text-4xl font-extrabold text-blue-900 leading-tight border-l-8 border-orange-500 pl-6">
+                    Our Story
+                </h2>
+                <p class="mt-6 text-gray-700 text-base sm:text-lg leading-relaxed">
+                    Founded in <b>2020</b> (formally registered in <b>2026</b>) by <b>Bondili Sai Manoj</b> and
+                    <b>Prasad Majji</b>,
+                    Vishv Kraanti Samaaj Foundation began with one dream:
+                    <b>rural children should never be left behind</b> due to lack of resources.
+                </p>
+                <p class="mt-4 text-gray-700 text-base sm:text-lg leading-relaxed">
+                    From our beginnings in Andhra Pradesh, we have grown into a movement that guides rural students
+                    toward <b>urban education</b>, real-world skills, and <b>financial independence</b>.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="about.html"
+                        class="inline-flex justify-center bg-blue-900 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-blue-950">
+                        Read More About Us
+                    </a>
+                    <a href="volunteer.html"
+                        class="inline-flex justify-center bg-white border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-xl font-extrabold hover:bg-blue-50">
+                        Become a Volunteer
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -top-6 -left-6 w-24 h-24 bg-orange-500 rounded-full opacity-20 animate-pulse">
+                </div>
+                <img class="relative z-10 w-full rounded-3xl shadow-2xl object-cover"
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80"
+                    alt="Students">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS (your 3 real programs) -->
+    <section id="programs" class="py-16 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900">Programs That Create Change</h2>
+                <p class="text-gray-600 mt-3 max-w-3xl mx-auto">
+                    We focus on measurable outcomes—education access, skill readiness, and long-term financial
+                    stability.
+                </p>
+                <div class="h-1 w-24 bg-orange-500 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border">
+                    <img class="w-full h-52 object-cover"
+                        src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?auto=format&fit=crop&q=80"
+                        alt="Education Bridge">
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-blue-900 text-white grid place-items-center">
+                                <i class="fa-solid fa-school"></i>
+                            </span>
+                            <h3 class="text-xl font-extrabold text-blue-900">Rural-to-Urban Education Bridge</h3>
+                        </div>
+                        <p class="text-gray-600 mb-5">
+                            Scholarships, mentorship and logistical support to help rural students study in urban
+                            schools & colleges.
+                        </p>
+                        <p class="text-sm text-gray-500"><b>Target:</b> 7–22 yrs • <b>Status:</b> Ongoing</p>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border">
+                    <img class="w-full h-52 object-cover"
+                        src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80"
+                        alt="Skill Workshops">
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-orange-500 text-white grid place-items-center">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </span>
+                            <h3 class="text-xl font-extrabold text-blue-900">Skill Development Workshops</h3>
+                        </div>
+                        <p class="text-gray-600 mb-5">
+                            Computer literacy, communication skills and career readiness workshops for modern
+                            opportunities.
+                        </p>
+                        <p class="text-sm text-gray-500"><b>Target:</b> 15–25 yrs • <b>Status:</b> Ongoing</p>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border">
+                    <img class="w-full h-52 object-cover"
+                        src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80"
+                        alt="Financial Literacy">
+                    <div class="p-7">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-10 h-10 rounded-xl bg-blue-900 text-white grid place-items-center">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </span>
+                            <h3 class="text-xl font-extrabold text-blue-900">Financial Literacy & Stability</h3>
+                        </div>
+                        <p class="text-gray-600 mb-5">
+                            Guidance on savings, entrepreneurship and career planning to ensure long-term financial
+                            independence.
+                        </p>
+                        <p class="text-sm text-gray-500"><b>Target:</b> Rural college students • <b>Status:</b> Ongoing
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="program.html"
+                    class="inline-flex bg-blue-900 text-white px-10 py-4 rounded-xl font-extrabold hover:bg-blue-950">
+                    View All Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL (your Narasimha quote adapted) -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border relative">
+                <i class="fas fa-quote-left text-orange-400 text-5xl absolute -top-6 left-8 opacity-60"></i>
+
+                <h3 class="text-2xl md:text-3xl font-extrabold text-blue-900 mb-5">
+                    A Student’s Journey Can Change a Whole Family
+                </h3>
+
+                <p class="text-lg md:text-2xl leading-relaxed italic text-gray-800">
+                    “This NGO gave me the chance to study in Sydney. Today, I am financially independent and supporting
+                    my family
+                    and other students.”
+                </p>
+
+                <div class="mt-7 flex items-center gap-4">
+                    <div class="w-14 h-14 bg-gray-200 rounded-full border-2 border-orange-500"></div>
+                    <div>
+                        <p class="font-extrabold text-blue-900">Narasimha</p>
+                        <p class="text-gray-600 text-sm italic">Alumni • Education Bridge Program</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOLUNTEER + MENTORS (high trust section) -->
+    <section class="py-16 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900">Powered by Volunteers</h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    Our volunteers are the backbone of our mission—mentoring, organizing workshops, and helping students
+                    grow with
+                    confidence.
+                </p>
+
+                <div class="mt-6 space-y-4">
+                    <div class="bg-gray-50 border rounded-2xl p-5">
+                        <p class="font-extrabold text-blue-900">CA Shareesh Gadde — Mentor</p>
+                        <p class="text-gray-600 text-sm mt-1">Guides rural students through their academic journey.</p>
+                    </div>
+                    <div class="bg-gray-50 border rounded-2xl p-5">
+                        <p class="font-extrabold text-blue-900">Mr. Gopi Krishna — Mentor</p>
+                        <p class="text-gray-600 text-sm mt-1">Organizes workshops and ensures smooth program execution.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="volunteer.html"
+                    class="inline-flex mt-8 bg-orange-500 text-white px-10 py-4 rounded-xl font-extrabold hover:bg-orange-600 shadow-md">
+                    Join as Volunteer
+                </a>
+            </div>
+
+            <div class="relative">
+                <img class="rounded-3xl shadow-2xl w-full object-cover"
+                    src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80"
+                    alt="Volunteer">
+                <div
+                    class="absolute -bottom-6 -left-6 bg-blue-900 text-white p-5 rounded-2xl shadow-lg hidden sm:block">
+                    <p class="text-sm text-blue-100">Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATE CTA (simple, clean) -->
+    <section class="bg-blue-900 text-white py-14">
+        <div class="container mx-auto px-4 sm:px-6 text-center max-w-4xl">
+            <h2 class="text-3xl sm:text-4xl font-extrabold">Help a Rural Student Reach Their Potential</h2>
+            <p class="mt-4 text-blue-100 text-lg">
+                Your donation supports scholarships, skill workshops, and financial literacy guidance.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="donate.html"
+                    class="bg-orange-500 px-10 py-4 rounded-xl font-extrabold hover:bg-orange-600 shadow-lg">
+                    Donate Now
+                </a>
+                <a href="contact.html"
+                    class="bg-white text-blue-900 px-10 py-4 rounded-xl font-extrabold hover:bg-gray-100 shadow-lg">
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section class="py-16 sm:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900">Moments That Matter</h2>
+                <p class="text-gray-600 mt-3">Scholarships • Workshops • Awareness Drives • Student Interactions</p>
+                <div class="h-1 w-24 bg-orange-500 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img class="rounded-2xl h-36 sm:h-44 md:h-52 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="">
+                <img class="rounded-2xl h-36 sm:h-44 md:h-52 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80" alt="">
+                <img class="rounded-2xl h-36 sm:h-44 md:h-52 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" alt="">
+                <img class="rounded-2xl h-36 sm:h-44 md:h-52 w-full object-cover"
+                    src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?auto=format&fit=crop&q=80" alt="">
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="gallery.html"
+                    class="inline-flex bg-white border-2 border-blue-900 text-blue-900 px-10 py-4 rounded-xl font-extrabold hover:bg-blue-50">
+                    View Full Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (kept similar) -->
+    <footer class="bg-blue-950 text-gray-300">
+        <div class="container mx-auto px-4 sm:px-6 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                <div>
+                    <img src="image/logo.png" alt="VKS Foundation" class="h-16 mb-4">
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Vishv Kraanti Samaaj Foundation bridges rural education gaps through scholarships, mentorship,
+                        skill training and financial literacy.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-extrabold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-orange-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-orange-400 transition">About</a></li>
+                        <li><a href="program.html" class="hover:text-orange-400 transition">Programs</a></li>
+                        <li><a href="impact.html" class="hover:text-orange-400 transition">Impact</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-extrabold text-lg mb-4">Programs</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="program.html" class="hover:text-orange-400 transition">Education Bridge</a></li>
+                        <li><a href="program.html" class="hover:text-orange-400 transition">Skill Workshops</a></li>
+                        <li><a href="program.html" class="hover:text-orange-400 transition">Financial Literacy</a></li>
+                        <li><a href="volunteer.html" class="hover:text-orange-400 transition">Volunteer</a></li>
+                        <li><a href="donate.html" class="hover:text-orange-400 transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-extrabold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><i class="fas fa-location-dot text-orange-400 mr-2"></i>Bengaluru, Karnataka</li>
+                        <li><i class="fas fa-envelope text-orange-400 mr-2"></i>info@vksfoundation.org</li>
+                        <li><i class="fas fa-phone-alt text-orange-400 mr-2"></i>+91 98765 43210</li>
+                    </ul>
+
+                    <a href="donate.html"
+                        class="inline-flex mt-6 bg-orange-500 text-white px-6 py-3 rounded-xl font-extrabold hover:bg-orange-600 transition">
+                        Donate Now
+                    </a>
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-blue-900 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p class="text-sm text-gray-400">© 2026 Vishv Kraanti Samaaj Foundation. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-orange-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-orange-400 transition">Terms</a>
+                    <a href="#" class="hover:text-orange-400 transition">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
