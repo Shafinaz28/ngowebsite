@@ -19,16 +19,38 @@
     rel="stylesheet">
 
   <style>
-    html,
-    body {
-      font-family: "Poppins", sans-serif;
+    html, body { font-family: "Poppins", sans-serif; }
+
+    /* Lightbox open/close */
+    #lightbox {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
     }
+    #lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Slide animation for next/prev */
+    @keyframes slideInRight {
+      0% { transform: translateX(24px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      0% { transform: translateX(-24px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    .slide-right { animation: slideInRight .22s ease both; }
+    .slide-left { animation: slideInLeft .22s ease both; }
+
+    #lightboxImg { transition: opacity .18s ease; }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- NAVBAR (Top bar removed) -->
+  <!-- NAVBAR -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
       <a href="index.html">
@@ -49,7 +71,6 @@
         Donate Now
       </a>
 
-      <!-- Mobile Menu Button -->
       <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
         <i class="fas fa-bars"></i>
       </button>
@@ -71,9 +92,7 @@
 
   <!-- Hero -->
   <section class="relative bg-blue-900 text-white py-16 sm:py-20 px-4 sm:px-6 text-center">
-    <div
-      class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80')] bg-cover bg-center">
-    </div>
+    <div class="absolute inset-0 opacity-20 bg-[url('https://source.unsplash.com/1600x900/?india,community,education')] bg-cover bg-center"></div>
     <div class="relative z-10 max-w-4xl mx-auto">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Gallery</h1>
       <p class="text-blue-100 max-w-2xl mx-auto">
@@ -116,111 +135,73 @@
   <!-- Gallery Grid -->
   <section class="py-14 sm:py-16 bg-gray-50">
     <div class="container mx-auto px-4 sm:px-6">
-
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
         <!-- CARD 1 -->
         <div class="galleryItem education group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80"
+          data-src="image/img4.jpg"
           data-title="Education Bridge Session">
           <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Education Bridge</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+            src="image/img4.jpg" alt="Indian Students Classroom">
         </div>
 
         <!-- CARD 2 -->
         <div class="galleryItem workshop group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?auto=format&fit=crop&q=80"
+          data-src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80"
           data-title="Skill Development Workshop">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Workshops</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+            alt="Indian Workshop">
         </div>
 
         <!-- CARD 3 -->
         <div class="galleryItem finance group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80"
+          data-src="image/financial-independence-training.jpg"
           data-title="Financial Literacy Session">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Financial Literacy</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="image/financial-independence-training.jpg" alt="Indian Financial Session">
         </div>
 
         <!-- CARD 4 -->
         <div class="galleryItem volunteer group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80"
+          data-src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1400&q=80"
           data-title="Volunteer Support Drive">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Volunteers</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80"
+            alt="Indian NGO Volunteers">
         </div>
 
         <!-- CARD 5 -->
         <div class="galleryItem education group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80"
-          data-title="Student Learning Activity">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Education Bridge</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          data-src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=1400&q=80"
+          data-title="Rural Student Learning">
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=800&q=80"
+            alt="Rural India Students">
         </div>
 
         <!-- CARD 6 -->
         <div class="galleryItem workshop group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80"
+          data-src="image/img2.jpg"
           data-title="Computer Literacy Training">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Workshops</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="image/img2.jpg" alt="Computer Training India">
         </div>
 
         <!-- CARD 7 -->
         <div class="galleryItem finance group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80"
-          data-title="Career & Savings Guidance">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Financial Literacy</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          data-src="image/img3.jpg"
+          data-title="Savings & Career Guidance">
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="image/img3.jpg" alt="Indian Career Guidance">
         </div>
 
         <!-- CARD 8 -->
         <div class="galleryItem volunteer group relative overflow-hidden rounded-2xl shadow-sm border bg-white cursor-pointer"
-          data-src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80"
+          data-src="image/vks-mentors-volunteers-action.jpg"
           data-title="Mentorship & Volunteer Team">
-          <img class="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition duration-500"
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80" alt="">
-          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition">
-            <p class="font-extrabold text-sm">Volunteers</p>
-            <p class="text-xs text-white/90">Tap to view</p>
-          </div>
+          <img class="w-full h-40 sm:h-48 md:h-56 object-cover"
+            src="image/vks-mentors-volunteers-action.jpg" alt="Indian Mentorship Team">
         </div>
 
       </div>
@@ -247,7 +228,7 @@
     </div>
   </section>
 
-  <!-- Footer (links fixed) -->
+  <!-- Footer -->
   <footer class="bg-blue-950 text-gray-300">
     <div class="container mx-auto px-4 sm:px-6 py-14">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -310,32 +291,47 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center bg-black/80 z-[9999] p-4">
-    <div class="relative max-w-4xl w-full">
+  <!-- ✅ Lightbox Modal with Prev/Next -->
+  <div id="lightbox" class="fixed inset-0 z-[9999]">
+    <div id="lightboxBackdrop" class="absolute inset-0 bg-black/80"></div>
+
+    <div class="relative h-full w-full flex items-center justify-center p-4">
+
+      <!-- Close -->
       <button id="closeLightbox"
-        class="absolute -top-12 right-0 text-white text-3xl font-extrabold hover:text-orange-400">
-        &times;
+        class="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
-        <img id="lightboxImg" src="" alt="" class="w-full max-h-[70vh] object-contain bg-black">
-        <div class="p-5">
-          <p id="lightboxTitle" class="font-extrabold text-blue-900"></p>
-          <p class="text-sm text-gray-600 mt-1">Vishv Kraanti Samaaj Foundation • Gallery</p>
+
+      <!-- Prev -->
+      <button id="prevLightbox"
+        class="absolute left-4 md:left-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl flex items-center justify-center">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <!-- Next -->
+      <button id="nextLightbox"
+        class="absolute right-4 md:right-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl flex items-center justify-center">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <div class="max-w-5xl w-full">
+        <img id="lightboxImg" class="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl bg-black" src="" alt="">
+        <div class="text-center mt-4">
+          <p id="lightboxTitle" class="text-white font-extrabold"></p>
+          <p id="lightboxCounter" class="text-white/60 text-xs mt-1"></p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JS: Mobile menu + gallery filter + lightbox -->
+  <!-- JS: Mobile menu + filter + lightbox prev/next -->
   <script>
     // Mobile menu
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-    });
+    mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => mobileMenu.classList.add("hidden")));
 
     // Filter
     const filterBtns = document.querySelectorAll(".filterBtn");
@@ -355,44 +351,102 @@
         setActive(btn);
         const filter = btn.getAttribute("data-filter");
         items.forEach(item => {
-          if (filter === "all" || item.classList.contains(filter)) {
-            item.classList.remove("hidden");
-          } else {
-            item.classList.add("hidden");
-          }
+          if (filter === "all" || item.classList.contains(filter)) item.classList.remove("hidden");
+          else item.classList.add("hidden");
         });
       });
     });
 
-    // Lightbox
+    // ✅ Lightbox with Prev/Next
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
     const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxCounter = document.getElementById("lightboxCounter");
     const closeLightbox = document.getElementById("closeLightbox");
+    const prevLightbox = document.getElementById("prevLightbox");
+    const nextLightbox = document.getElementById("nextLightbox");
+    const backdrop = document.getElementById("lightboxBackdrop");
 
-    items.forEach(card => {
+    // Use only visible items for navigation
+    function getVisibleCards() {
+      return Array.from(document.querySelectorAll(".galleryItem")).filter(el => !el.classList.contains("hidden"));
+    }
+
+    let currentIndex = 0;
+
+    function openBox(index, direction = "right") {
+      const visible = getVisibleCards();
+      if (!visible.length) return;
+
+      currentIndex = (index + visible.length) % visible.length;
+
+      const card = visible[currentIndex];
+      const src = card.getAttribute("data-src");
+      const title = card.getAttribute("data-title") || "Gallery Photo";
+
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+
+      lightboxImg.classList.remove("slide-left", "slide-right");
+      lightboxImg.style.opacity = "0";
+
+      setTimeout(() => {
+        lightboxImg.src = src;
+        lightboxTitle.textContent = title;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${visible.length}`;
+
+        lightboxImg.style.opacity = "1";
+        lightboxImg.classList.add(direction === "left" ? "slide-left" : "slide-right");
+      }, 120);
+    }
+
+    function closeBox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "auto";
+      lightboxImg.src = "";
+    }
+
+    function nextImg() {
+      openBox(currentIndex + 1, "right");
+    }
+
+    function prevImg() {
+      openBox(currentIndex - 1, "left");
+    }
+
+    // Open when click card
+    items.forEach((card) => {
       card.addEventListener("click", () => {
-        lightboxImg.src = card.getAttribute("data-src");
-        lightboxTitle.textContent = card.getAttribute("data-title") || "Gallery Photo";
-        lightbox.classList.remove("hidden");
-        lightbox.classList.add("flex");
-        document.body.style.overflow = "hidden";
+        const visible = getVisibleCards();
+        const index = visible.indexOf(card);
+        openBox(index, "right");
       });
     });
 
-    function closeBox() {
-      lightbox.classList.add("hidden");
-      lightbox.classList.remove("flex");
-      document.body.style.overflow = "auto";
-    }
-
     closeLightbox.addEventListener("click", closeBox);
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeBox();
-    });
+    backdrop.addEventListener("click", closeBox);
+    nextLightbox.addEventListener("click", nextImg);
+    prevLightbox.addEventListener("click", prevImg);
+
+    // Keyboard
     document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
       if (e.key === "Escape") closeBox();
+      if (e.key === "ArrowRight") nextImg();
+      if (e.key === "ArrowLeft") prevImg();
     });
+
+    // Swipe (mobile)
+    let startX = 0;
+    lightbox.addEventListener("touchstart", (e) => startX = e.changedTouches[0].screenX, { passive: true });
+    lightbox.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].screenX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextImg() : prevImg();
+    }, { passive: true });
+
+    // Start closed
+    closeBox();
   </script>
 
 </body>
