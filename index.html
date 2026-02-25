@@ -19,74 +19,78 @@
     rel="stylesheet">
 
   <style>
-    html, body { font-family: "Poppins", sans-serif; }
-    body { margin: 0; }
+  html, body { font-family: "Poppins", sans-serif; }
+  body { margin: 0; }
 
-    /* HERO sizing:
-       Desktop: full height
-       Mobile: reduce extra space */
-   @media (max-width: 640px) {
-  /* Make hero shorter (less empty space) */
+  /* ✅ Desktop (and all screens by default): FULL HEIGHT HERO */
   .hero-full{
-    min-height: 68vh !important;     /* ✅ smaller than before */
-    padding: 0 !important;
+    min-height: 100vh;           /* full screen */
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .hero-inner{
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* ✅ Increase image size */
-  .hero-img{
-    width: 280px !important;         /* ✅ bigger image */
-    margin-bottom: 10px !important;  /* ✅ reduce gap under image */
-  }
-
-  /* ✅ Reduce title spacing */
-  #heroTitle{
-    font-size: 22px !important;
-    line-height: 1.15 !important;
-    margin-bottom: 8px !important;
-  }
-
-  /* ✅ Reduce button gap + height slightly */
-  .hero-btns{
-    gap: 10px !important;
-  }
-
-  .hero-btns a{
-    height: 52px !important;         /* slightly smaller */
-  }
-}
-
-    /* Load pop animation */
-    @keyframes popIn {
-      0% { transform: scale(.92); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+  /* ✅ Mobile: reduce extra space + increase image size */
+  @media (max-width: 640px) {
+    .hero-full{
+      min-height: 68vh !important;
+      padding: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .pop-in { animation: popIn .55s ease-out both; }
 
-    /* Fade up animation */
-    @keyframes fadeUp {
-      0% { transform: translateY(10px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+    .hero-inner{
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
     }
-    .fade-up { animation: fadeUp .45s ease-out both; }
 
-    /* Lightbox image transitions */
-    #lightbox {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .18s ease;
+    .hero-img{
+      width: 280px !important;
+      margin-bottom: 10px !important;
     }
-    #lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
+
+    #heroTitle{
+      font-size: 22px !important;
+      line-height: 1.15 !important;
+      margin-bottom: 8px !important;
     }
+
+    .hero-btns{ gap: 10px !important; }
+
+    .hero-btns a{ height: 52px !important; }
+  }
+
+  /* Load pop animation */
+  @keyframes popIn {
+    0% { transform: scale(.92); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .pop-in { animation: popIn .55s ease-out both; }
+
+  /* Fade up animation */
+  @keyframes fadeUp {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  .fade-up { animation: fadeUp .45s ease-out both; }
+
+  /* Lightbox transitions */
+  #lightbox { opacity: 0; pointer-events: none; transition: opacity .18s ease; }
+  #lightbox.open { opacity: 1; pointer-events: auto; }
+
+  @keyframes slideInRight {
+    0% { transform: translateX(20px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slideInLeft {
+    0% { transform: translateX(-20px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  .slide-right { animation: slideInRight .22s ease both; }
+  .slide-left { animation: slideInLeft .22s ease both; }
+  #lightboxImg { transition: opacity .18s ease; }
+   
 
     /* Slide animation for lightbox when next/prev */
     @keyframes slideInRight {
@@ -146,33 +150,34 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="relative bg-blue-900 text-white overflow-hidden hero-full flex items-center justify-center py-10 sm:py-16">
-    <div class="absolute inset-0 opacity-25 bg-[url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
 
-    <div class="relative container mx-auto px-4 sm:px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <img id="heroImage" src="image/hero.png" alt="Hero Image"
-             class="hero-img mx-auto w-72 sm:w-96 md:w-[520px] lg:w-[620px] xl:w-[720px] object-contain mb-8 sm:mb-12 opacity-0">
+<!-- ✅ FIX: HERO section - remove extra py that breaks full height -->
+<section class="relative bg-blue-900 text-white overflow-hidden hero-full">
+  <div class="absolute inset-0 opacity-25 bg-[url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
 
-        <div class="max-w-3xl mx-auto mb-6 sm:mb-8">
-          <h1 id="heroTitle" class="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight opacity-0"></h1>
-          <p id="heroSub" class="mt-3 text-blue-100 text-sm sm:text-lg opacity-0"></p>
-        </div>
+  <div class="hero-inner relative container mx-auto px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <img id="heroImage" src="image/hero.png" alt="Hero Image"
+        class="hero-img mx-auto w-72 sm:w-96 md:w-[520px] lg:w-[620px] xl:w-[720px] object-contain mb-6 sm:mb-10 opacity-0">
 
-        <div class="hero-btns flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-          <a href="donate.html"
-             class="w-64 h-14 flex items-center justify-center bg-orange-500 text-white text-lg font-bold rounded-xl shadow-lg hover:bg-orange-600 transition duration-300">
-            Sponsor a Student
-          </a>
-          <a href="#programs"
-             class="w-64 h-14 flex items-center justify-center bg-white text-blue-900 text-lg font-bold rounded-xl shadow-lg hover:bg-gray-100 transition duration-300">
-            Explore Programs
-          </a>
-        </div>
+      <div class="max-w-3xl mx-auto mb-5 sm:mb-7">
+        <h1 id="heroTitle" class="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight opacity-0"></h1>
+        <p id="heroSub" class="mt-3 text-blue-100 text-sm sm:text-lg opacity-0"></p>
+      </div>
+
+      <div class="hero-btns flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+        <a href="donate.html"
+          class="w-64 h-14 flex items-center justify-center bg-orange-500 text-white text-lg font-bold rounded-xl shadow-lg hover:bg-orange-600 transition duration-300">
+          Sponsor a Student
+        </a>
+        <a href="#programs"
+          class="w-64 h-14 flex items-center justify-center bg-white text-blue-900 text-lg font-bold rounded-xl shadow-lg hover:bg-gray-100 transition duration-300">
+          Explore Programs
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- QUICK IMPACT -->
   <section class="bg-white border-b py-10 sm:py-12 reveal">
