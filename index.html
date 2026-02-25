@@ -111,10 +111,11 @@
 <body class="bg-gray-50 text-gray-900">
 
   <!-- NAVBAR -->
+  <!-- NAVBAR (Top bar removed) -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="image/logo.png" class="h-14 sm:h-20" alt="VKS Foundation Logo">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="index.html">
+        <img src="image/logo.png" class="h-20" alt="Logo">
       </a>
 
       <div class="hidden md:flex space-x-8 font-semibold text-blue-900">
@@ -131,6 +132,7 @@
         Donate Now
       </a>
 
+      <!-- Mobile Menu Button -->
       <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
         <i class="fas fa-bars"></i>
       </button>
@@ -138,7 +140,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-      <div class="hero-btns flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
+      <div class="flex flex-col p-6 space-y-4 font-semibold text-blue-900">
         <a href="index.html" class="text-orange-600">Home</a>
         <a href="about.html">About</a>
         <a href="program.html">Programs</a>
