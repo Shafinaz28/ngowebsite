@@ -1,6 +1,6 @@
+<!-- donate.html (COMPLETE WORKING FILE) - Donate form connected to SAME Google Sheet WebApp URL + SweetAlert Loading -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,8 +14,10 @@
 
   <!-- Google Font: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ✅ SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <style>
     html, body { font-family: "Poppins", sans-serif; }
@@ -24,12 +26,10 @@
 
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- NAVBAR (Top bar removed) -->
+  <!-- NAVBAR -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="index.html">
-        <img src="image/logo.png" class="h-20" alt="Logo">
-      </a>
+      <a href="index.html"><img src="image/logo.png" class="h-20" alt="Logo"></a>
 
       <div class="hidden md:flex space-x-8 font-semibold text-blue-900">
         <a href="index.html" class="hover:text-orange-500">Home</a>
@@ -40,18 +40,11 @@
         <a href="contact.html" class="text-orange-600 border-b-2 border-orange-500">Contact</a>
       </div>
 
-      <a href="donate.html"
-        class="hidden md:inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600">
-        Donate Now
-      </a>
+      <a href="donate.html" class="hidden md:inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600">Donate Now</a>
 
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button id="menuBtn" class="md:hidden text-2xl text-blue-900"><i class="fas fa-bars"></i></button>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
       <div class="flex flex-col p-6 space-y-4 font-semibold text-blue-900">
         <a href="index.html">Home</a>
@@ -66,57 +59,37 @@
   </nav>
 
   <!-- HERO -->
-<section class="relative bg-blue-900 text-white py-16 sm:py-20 px-4 sm:px-6 text-center">
-
-  <!-- India-focused background -->
-  <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center">
-  </div>
-
-  <div class="relative z-10 container mx-auto px-4 sm:px-6">
-    <div class="max-w-4xl mx-auto">
-
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-        Donate
-      </h1>
-
-      <p class="text-blue-100 mt-4 max-w-2xl mx-auto">
-        Your support helps rural students access education, mentorship, skill training and financial literacy—so they can
-        become financially independent.
-      </p>
-
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#donate"
-          class="inline-flex justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">
-          Donate Now
-        </a>
-
-        <a href="#impact"
-          class="inline-flex justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-extrabold hover:bg-white hover:text-blue-900 transition">
-          See Impact
-        </a>
+  <section class="relative bg-blue-900 text-white py-16 sm:py-20 px-4 sm:px-6 text-center">
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+    <div class="relative z-10 container mx-auto px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Donate</h1>
+        <p class="text-blue-100 mt-4 max-w-2xl mx-auto">
+          Your support helps rural students access education, mentorship, skill training and financial literacy—so they can become financially independent.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#donate" class="inline-flex justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">Donate Now</a>
+          <a href="#impact" class="inline-flex justify-center border-2 border-white text-white px-8 py-4 rounded-xl font-extrabold hover:bg-white hover:text-blue-900 transition">See Impact</a>
+        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- TRUST STRIP -->
   <section class="bg-white border-b">
     <div class="container mx-auto px-4 sm:px-6 py-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-gray-50 border rounded-2xl p-6">
-  <div class="flex items-start gap-4">
-    <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
-<i class="fa-solid fa-hand-holding-heart text-orange-500 text-xl"></i>
-    </div>
-    <div>
-      <p class="font-extrabold text-blue-900">Safe & Transparent</p>
-      <p class="text-sm text-gray-600 mt-1">
-        We share updates on programs and outcomes.
-      </p>
-    </div>
-  </div>
-</div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
+              <i class="fa-solid fa-hand-holding-heart text-orange-500 text-xl"></i>
+            </div>
+            <div>
+              <p class="font-extrabold text-blue-900">Safe & Transparent</p>
+              <p class="text-sm text-gray-600 mt-1">We share updates on programs and outcomes.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="bg-gray-50 border rounded-2xl p-6">
           <div class="flex items-start gap-4">
@@ -141,21 +114,22 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- DONATION + SIDE IMAGE -->
+  <!-- DONATE SECTION -->
   <section id="donate" class="py-16 sm:py-20 bg-gray-50">
     <div class="container mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-        <!-- Donation Card -->
+        <!-- LEFT: FORM CARD -->
         <div class="bg-white border rounded-3xl shadow-sm p-6 sm:p-8">
           <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-900">Make a Donation</h2>
           <p class="text-gray-600 mt-2">Choose an amount and tell us how you want your donation used.</p>
 
-          <!-- Amount buttons -->
+          <!-- Amount -->
           <div class="mt-6">
             <p class="text-sm font-bold text-blue-900 mb-3">Select amount</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -168,89 +142,107 @@
             <div class="mt-4">
               <label class="text-sm font-bold text-blue-900">Or enter custom amount (₹)</label>
               <input id="amountInput" type="number" min="1" placeholder="Enter amount"
-                class="mt-2 w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                     class="mt-2 w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
             </div>
           </div>
 
-          <!-- Donation purpose -->
+          <!-- ✅ FORM START (CONNECTED TO GOOGLE SHEET) -->
+          <form id="donateForm" class="mt-6 space-y-6">
+
+            <!-- ✅ Hidden fields that will be sent to sheet -->
+            <input type="hidden" name="type" value="donation">
+            <input type="hidden" name="amount" id="amountHidden" value="">
+            <input type="hidden" name="purpose" id="purposeHidden" value="Education Support">
+            <input type="hidden" name="receipt" id="receiptHidden" value="yes">
+
+            <!-- Purpose -->
+            <div>
+              <p class="text-sm font-bold text-blue-900 mb-3">Choose purpose</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
+                  <input type="radio" name="purposeRadio" value="Education Support" class="accent-orange-500" checked>
+                  <div>
+                    <p class="font-extrabold text-blue-900">Education Support</p>
+                    <p class="text-xs text-gray-600">Scholarships, books, mentorship</p>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
+                  <input type="radio" name="purposeRadio" value="Skill Training" class="accent-orange-500">
+                  <div>
+                    <p class="font-extrabold text-blue-900">Skill Training</p>
+                    <p class="text-xs text-gray-600">Career readiness workshops</p>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
+                  <input type="radio" name="purposeRadio" value="Financial Literacy" class="accent-orange-500">
+                  <div>
+                    <p class="font-extrabold text-blue-900">Financial Literacy</p>
+                    <p class="text-xs text-gray-600">Budgeting, savings, basics</p>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
+                  <input type="radio" name="purposeRadio" value="General Fund" class="accent-orange-500">
+                  <div>
+                    <p class="font-extrabold text-blue-900">General Fund</p>
+                    <p class="text-xs text-gray-600">Where it’s needed most</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div>
+              <p class="text-sm font-bold text-blue-900 mb-3">Your details</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" name="name" id="name" placeholder="Full Name" required
+                       class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <input type="email" name="email" id="email" placeholder="Email" required
+                       class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <input type="tel" name="phone" id="phone" placeholder="Phone"
+                       class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <input type="text" name="city" id="city" placeholder="City"
+                       class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
+              </div>
+
+              <div class="mt-3">
+                <textarea name="message" id="message" rows="3" placeholder="Optional message to the foundation"
+                          class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+              </div>
+
+              <div class="mt-3 flex items-start gap-3">
+                <input id="receipt" type="checkbox" class="mt-1 accent-orange-500" checked>
+                <label for="receipt" class="text-sm text-gray-600">Email me a donation acknowledgement / receipt.</label>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div>
+              <button id="donateSubmitBtn" type="submit"
+                      class="inline-flex w-full justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md disabled:opacity-60 disabled:cursor-not-allowed">
+                Submit Donation Details
+              </button>
+
+              <p class="text-xs text-gray-500 mt-3">
+                This submits donor details to your Google Sheet. Payment is separate (Razorpay/UPI/Bank).
+              </p>
+
+              <p id="donateStatus" class="text-sm font-semibold text-center mt-3"></p>
+            </div>
+          </form>
+          <!-- ✅ FORM END -->
+
+          <!-- Optional Pay button (payment gateway link later) -->
           <div class="mt-6">
-            <p class="text-sm font-bold text-blue-900 mb-3">Choose purpose</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
-                <input type="radio" name="purpose" value="Education Support" class="accent-orange-500" checked>
-                <div>
-                  <p class="font-extrabold text-blue-900">Education Support</p>
-                  <p class="text-xs text-gray-600">Scholarships, books, mentorship</p>
-                </div>
-              </label>
-
-              <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
-                <input type="radio" name="purpose" value="Skill Training" class="accent-orange-500">
-                <div>
-                  <p class="font-extrabold text-blue-900">Skill Training</p>
-                  <p class="text-xs text-gray-600">Career readiness workshops</p>
-                </div>
-              </label>
-
-              <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
-                <input type="radio" name="purpose" value="Financial Literacy" class="accent-orange-500">
-                <div>
-                  <p class="font-extrabold text-blue-900">Financial Literacy</p>
-                  <p class="text-xs text-gray-600">Budgeting, savings, basics</p>
-                </div>
-              </label>
-
-              <label class="flex items-center gap-3 p-4 border rounded-2xl cursor-pointer hover:border-orange-500 transition">
-                <input type="radio" name="purpose" value="General Fund" class="accent-orange-500">
-                <div>
-                  <p class="font-extrabold text-blue-900">General Fund</p>
-                  <p class="text-xs text-gray-600">Where it’s needed most</p>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Donor details -->
-          <div class="mt-6">
-            <p class="text-sm font-bold text-blue-900 mb-3">Your details</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input type="text" id="name" placeholder="Full Name"
-                class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
-              <input type="email" id="email" placeholder="Email"
-                class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
-              <input type="tel" id="phone" placeholder="Phone"
-                class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
-              <input type="text" id="city" placeholder="City"
-                class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500">
-            </div>
-
-            <div class="mt-3">
-              <textarea id="message" rows="3" placeholder="Optional message to the foundation"
-                class="w-full rounded-xl border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-            </div>
-
-            <div class="mt-3 flex items-start gap-3">
-              <input id="receipt" type="checkbox" class="mt-1 accent-orange-500" checked>
-              <label for="receipt" class="text-sm text-gray-600">
-                Email me a donation acknowledgement / receipt.
-              </label>
-            </div>
-          </div>
-
-          <!-- Pay CTA -->
-          <div class="mt-6">
-            <!-- NOTE: Replace # with your payment link (Razorpay/Instamojo/UPI/Payment gateway) -->
-            <a id="payBtn" href="#"
-              class="inline-flex w-full justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">
+            <a id="payBtn" href="#" class="inline-flex w-full justify-center bg-blue-900 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-blue-950 transition shadow-md">
               Proceed to Pay
             </a>
-
-            <p class="text-xs text-gray-500 mt-3">
-              Tip: Connect this button to your payment gateway link (Razorpay Payment Page / UPI / Bank details).
-            </p>
+            <p class="text-xs text-gray-500 mt-3">Tip: Connect this button to your payment gateway link (Razorpay Payment Page / UPI / Bank details).</p>
           </div>
 
-          <!-- Bank/UPI details -->
+          <!-- UPI / Bank -->
           <div class="mt-8 border-t pt-6">
             <h3 class="text-lg font-extrabold text-blue-900">Donate via UPI / Bank Transfer</h3>
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -270,18 +262,14 @@
 
         </div>
 
-        <!-- Side Visual + Mini Impact -->
+        <!-- RIGHT CONTENT -->
         <div class="space-y-6">
           <div class="relative overflow-hidden rounded-3xl shadow-2xl border bg-white">
-            <img class="w-full h-[420px] object-cover"
-              src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1400&q=80"
-              alt="Indian student education support">
+            <img class="w-full h-[420px] object-cover" src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1400&q=80" alt="Indian student education support">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
             <div class="absolute bottom-0 p-6">
               <p class="text-white font-extrabold text-2xl">Your donation becomes someone’s turning point.</p>
-              <p class="text-white/90 mt-2 max-w-lg">
-                From rural aspirations to real opportunities—help students gain education, skills, and financial confidence.
-              </p>
+              <p class="text-white/90 mt-2 max-w-lg">From rural aspirations to real opportunities—help students gain education, skills, and financial confidence.</p>
             </div>
           </div>
 
@@ -295,18 +283,15 @@
                 <li>✅ Financial literacy sessions</li>
               </ul>
             </div>
+
             <div class="bg-white border rounded-2xl p-6">
               <p class="text-sm font-bold text-blue-900">Prefer Corporate / CSR?</p>
               <p class="text-sm text-gray-600 mt-2">We can share proposals and program reports.</p>
-              <a href="contact.html"
-                class="inline-flex mt-4 w-full justify-center border-2 border-blue-900 text-blue-900 px-6 py-3 rounded-xl font-extrabold hover:bg-blue-900 hover:text-white transition">
-                Talk to Us
-              </a>
+              <a href="contact.html" class="inline-flex mt-4 w-full justify-center border-2 border-blue-900 text-blue-900 px-6 py-3 rounded-xl font-extrabold hover:bg-blue-900 hover:text-white transition">Talk to Us</a>
             </div>
           </div>
 
         </div>
-
       </div>
     </div>
   </section>
@@ -315,13 +300,8 @@
   <section id="impact" class="py-16 sm:py-20 bg-white">
     <div class="container mx-auto px-4 sm:px-6">
       <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 leading-tight">
-          Impact is not just numbers — it’s confidence, opportunity, and transformation.
-        </h2>
-        <p class="text-gray-600 mt-4 leading-relaxed">
-          Students from rural backgrounds often lack access, exposure, and financial awareness. With the right support,
-          they begin to dream bigger and move toward independence.
-        </p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 leading-tight">Impact is not just numbers — it’s confidence, opportunity, and transformation.</h2>
+        <p class="text-gray-600 mt-4 leading-relaxed">Students from rural backgrounds often lack access, exposure, and financial awareness. With the right support, they begin to dream bigger and move toward independence.</p>
       </div>
 
       <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -347,10 +327,7 @@
           <p class="text-2xl font-extrabold">Ready to help a student take the next step?</p>
           <p class="text-blue-100 mt-1">Donate once, or choose monthly support.</p>
         </div>
-        <a href="#donate"
-          class="inline-flex justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">
-          Donate Now
-        </a>
+        <a href="#donate" class="inline-flex justify-center bg-orange-500 text-white px-8 py-4 rounded-xl font-extrabold hover:bg-orange-600 transition shadow-md">Donate Now</a>
       </div>
     </div>
   </section>
@@ -366,18 +343,15 @@
       <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white border rounded-2xl p-6">
           <p class="font-extrabold text-blue-900">How will my donation be used?</p>
-          <p class="text-sm text-gray-600 mt-2">Based on the purpose you choose—education, skills, financial literacy, or
-            general fund.</p>
+          <p class="text-sm text-gray-600 mt-2">Based on the purpose you choose—education, skills, financial literacy, or general fund.</p>
         </div>
         <div class="bg-white border rounded-2xl p-6">
           <p class="font-extrabold text-blue-900">Will I get an acknowledgement?</p>
-          <p class="text-sm text-gray-600 mt-2">Yes. Enable “Email receipt” and we will send an acknowledgement to your
-            email.</p>
+          <p class="text-sm text-gray-600 mt-2">Yes. Enable “Email receipt” and we will send an acknowledgement to your email.</p>
         </div>
         <div class="bg-white border rounded-2xl p-6">
           <p class="font-extrabold text-blue-900">Can I donate monthly?</p>
-          <p class="text-sm text-gray-600 mt-2">Yes. Connect the “Proceed to Pay” button to a monthly plan on your payment
-            gateway.</p>
+          <p class="text-sm text-gray-600 mt-2">Yes. Connect the “Proceed to Pay” button to a monthly plan on your payment gateway.</p>
         </div>
         <div class="bg-white border rounded-2xl p-6">
           <p class="font-extrabold text-blue-900">Can my company donate via CSR?</p>
@@ -388,19 +362,17 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-blue-950 text-gray-300 reveal">
+  <footer class="bg-blue-950 text-gray-300">
     <div class="container mx-auto px-4 sm:px-6 py-12 sm:py-14">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-
-        <div class="reveal-stagger">
+        <div>
           <img src="image/logo.png" alt="VKS Foundation" class="h-16 mb-4">
           <p class="text-sm text-gray-400 leading-relaxed">
-            Vishv Kraanti Samaaj Foundation bridges rural education gaps through scholarships, mentorship,
-            skill training and financial literacy.
+            Vishv Kraanti Samaaj Foundation bridges rural education gaps through scholarships, mentorship, skill training and financial literacy.
           </p>
         </div>
 
-        <div class="reveal-stagger">
+        <div>
           <h3 class="text-white font-extrabold text-lg mb-4">Quick Links</h3>
           <ul class="space-y-3 text-sm">
             <li><a href="index.html" class="hover:text-orange-400 transition">Home</a></li>
@@ -411,7 +383,7 @@
           </ul>
         </div>
 
-        <div class="reveal-stagger">
+        <div>
           <h3 class="text-white font-extrabold text-lg mb-4">Programs</h3>
           <ul class="space-y-3 text-sm">
             <li><a href="program.html" class="hover:text-orange-400 transition">Education Bridge</a></li>
@@ -421,23 +393,19 @@
           </ul>
         </div>
 
-        <div class="reveal-stagger">
+        <div>
           <h3 class="text-white font-extrabold text-lg mb-4">Contact</h3>
           <ul class="space-y-3 text-sm text-gray-400">
             <li><i class="fas fa-location-dot text-orange-400 mr-2"></i>Bangalore Office : Basheer & Co, 582 3rd Floor, B J Arcade, 7th Main Road, 4th Cross Road, CBI Main Rd, HMT Layout, RT Nagar, Bengaluru, Karnataka 560032</li>
             <li><i class="fas fa-envelope text-orange-400 mr-2"></i>info@vksfoundation.org</li>
             <li><i class="fas fa-envelope text-orange-400 mr-2"></i>donation@vksfoundation.org</li>
-            <li><i class="fas fa-phone-alt text-orange-400 mr-2"></i>+91  92067 66409</li>
+            <li><i class="fas fa-phone-alt text-orange-400 mr-2"></i>+91 93530 85494</li>
           </ul>
-
-          <a href="donate.html"
-            class="inline-flex mt-6 bg-orange-500 text-white px-6 py-3 rounded-xl font-extrabold hover:bg-orange-600 transition">
-            Donate Now
-          </a>
+          <a href="donate.html" class="inline-flex mt-6 bg-orange-500 text-white px-6 py-3 rounded-xl font-extrabold hover:bg-orange-600 transition">Donate Now</a>
         </div>
       </div>
 
-      <div class="border-t border-blue-900 mt-10 pt-7 flex flex-col md:flex-row items-center justify-between gap-3 reveal-stagger">
+      <div class="border-t border-blue-900 mt-10 pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
         <p class="text-sm text-gray-400">© 2026 Vishv Kraanti Samaaj Foundation. All rights reserved.</p>
         <div class="flex gap-6 text-sm text-gray-400">
           <a href="#" class="hover:text-orange-400 transition">Privacy Policy</a>
@@ -448,17 +416,15 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- ✅ JS -->
   <script>
     // Mobile menu
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
-    });
+    mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => mobileMenu.classList.add("hidden")));
 
-    // Amount buttons -> set custom amount
+    // Amount buttons
     const amtBtns = document.querySelectorAll(".amtBtn");
     const amountInput = document.getElementById("amountInput");
     amtBtns.forEach(btn => {
@@ -467,6 +433,110 @@
         btn.classList.add("border-orange-500", "text-orange-600", "bg-orange-50");
         amountInput.value = btn.getAttribute("data-amt");
       });
+    });
+
+    // ✅ SAME GOOGLE APPS SCRIPT URL (same link you already use)
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx6BiAXf_9-nfsW0S3MpZ6izfwgeqHexvvNjO9qNJsq6P6wyMoQ06tB-k1c3Oxy7VRzaQ/exec";
+
+    const donateForm = document.getElementById("donateForm");
+    const donateStatus = document.getElementById("donateStatus");
+    const donateSubmitBtn = document.getElementById("donateSubmitBtn");
+
+    const amountHidden = document.getElementById("amountHidden");
+    const purposeHidden = document.getElementById("purposeHidden");
+    const receiptCheckbox = document.getElementById("receipt");
+    const receiptHidden = document.getElementById("receiptHidden");
+
+    function showLoadingSwal() {
+      Swal.fire({
+        title: "Submitting...",
+        html: "Please wait",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => Swal.showLoading()
+      });
+    }
+
+    function syncDonationFields() {
+      // Amount
+      amountHidden.value = (amountInput.value || "").trim();
+
+      // Purpose from purposeRadio
+      const selected = document.querySelector('input[name="purposeRadio"]:checked');
+      purposeHidden.value = selected ? selected.value : "Education Support";
+
+      // Receipt
+      receiptHidden.value = receiptCheckbox.checked ? "yes" : "no";
+    }
+
+    donateForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      syncDonationFields();
+
+      // Validate amount
+      if (!amountHidden.value || Number(amountHidden.value) <= 0) {
+        Swal.fire({ icon: "warning", title: "Enter donation amount", text: "Please select or enter an amount." });
+        return;
+      }
+
+      donateSubmitBtn.disabled = true;
+      donateStatus.textContent = "Submitting...";
+      donateStatus.className = "text-sm font-semibold text-center mt-3 text-blue-900";
+
+      showLoadingSwal();
+
+      try {
+        const formData = new FormData(donateForm);
+
+        const res = await fetch(SCRIPT_URL, {
+          method: "POST",
+          body: formData
+        });
+
+        if (!res.ok) throw new Error("Network error: " + res.status);
+
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); }
+        catch { throw new Error("Apps Script did not return JSON. Response: " + text.slice(0, 160)); }
+
+        if (data.result === "success") {
+          Swal.fire({
+            icon: "success",
+            title: "Submitted!",
+            text: "Your donation details were submitted to Google Sheet successfully."
+          });
+
+          donateStatus.textContent = "✅ Submitted successfully!";
+          donateStatus.className = "text-sm font-semibold text-center mt-3 text-green-600";
+
+          donateForm.reset();
+          amountHidden.value = "";
+          purposeHidden.value = "Education Support";
+          receiptHidden.value = "yes";
+
+          // Clear amount selection UI
+          amtBtns.forEach(b => b.classList.remove("border-orange-500", "text-orange-600", "bg-orange-50"));
+          amountInput.value = "";
+
+        } else {
+          Swal.fire({ icon: "error", title: "Failed", text: data.error || "Unknown error" });
+          donateStatus.textContent = "❌ Error: " + (data.error || "Unknown error");
+          donateStatus.className = "text-sm font-semibold text-center mt-3 text-red-600";
+        }
+
+      } catch (err) {
+        console.error(err);
+        Swal.fire({
+          icon: "error",
+          title: "Submission failed",
+          text: "Check Web App URL / deployment access / permissions."
+        });
+        donateStatus.textContent = "❌ Submission failed. Check Web App URL / permissions.";
+        donateStatus.className = "text-sm font-semibold text-center mt-3 text-red-600";
+      } finally {
+        donateSubmitBtn.disabled = false;
+      }
     });
   </script>
 
